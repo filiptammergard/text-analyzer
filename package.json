@@ -1,0 +1,12 @@
+{
+  "name": "text-analyzer",
+  "version": "1.0.0",
+  "description": "Count words, seqences reading time etc in a text",
+  "main": "index.js",
+  "author": "Filip Tammergård <filip@tammergard.se> (https://tammergard.se)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filiptammergard/text-analyzer.git"
+  }
+}
