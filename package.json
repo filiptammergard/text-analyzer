@@ -10,10 +10,6 @@
   ],
   "author": "Filip Tammergård <filip@tammergard.se> (https://tammergard.se)",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/filiptammergard/text-analyzer.git"
-  },
   "scripts": {
     "prebuild": "rimraf dist/",
     "build": "tsc",
@@ -23,5 +19,13 @@
   "devDependencies": {
     "rimraf": "^3.0.2",
     "typescript": "^4.2.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/filiptammergard/text-analyzer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/filiptammergard/text-analyzer/issues"
+  },
+  "keywords": ["text", "characters", "words", "time", "reading-time"]
 }
