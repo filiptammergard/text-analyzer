@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.readingTime = exports.countSequences = exports.countWords = void 0;
+exports.getReadingTime = exports.countSequences = exports.countWords = void 0;
 function countWords(text) {
     var words = text.split(/ |\t|\n|\r/).filter(function (word) { return word !== ""; }).length;
     return words;
@@ -12,7 +12,7 @@ function countSequences(text, sequence) {
 }
 exports.countSequences = countSequences;
 var WORDS_PER_MINUTE = 200;
-function readingTime(text) {
+function getReadingTime(text) {
     var words = countWords(text);
     var minutes = words / WORDS_PER_MINUTE;
     var milliseconds = minutes * 60 * 1000;
@@ -22,4 +22,4 @@ function readingTime(text) {
         milliseconds: milliseconds,
     };
 }
-exports.readingTime = readingTime;
+exports.getReadingTime = getReadingTime;

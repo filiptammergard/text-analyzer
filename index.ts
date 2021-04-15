@@ -10,7 +10,7 @@ export function countSequences(text: string, sequence: string) {
 
 const WORDS_PER_MINUTE = 200;
 
-export function readingTime(text: string) {
+export function getReadingTime(text: string) {
   const words = countWords(text);
   const minutes = words / WORDS_PER_MINUTE;
   const milliseconds = minutes * 60 * 1000;
