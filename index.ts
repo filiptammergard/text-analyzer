@@ -1,3 +1,8 @@
+export function countCharacters(text: string) {
+  const characters = text.length;
+  return characters;
+}
+
 export function countWords(text: string) {
   const words = text.split(/ |\t|\n|\r/).filter((word) => word !== "").length;
   return words;
