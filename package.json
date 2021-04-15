@@ -1,6 +1,6 @@
 {
   "name": "text-analyzer",
-  "version": "1.3.6",
+  "version": "1.4.0",
   "description": "Utility functions providing possibilities to analyzing text.",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -27,5 +27,11 @@
   "bugs": {
     "url": "https://github.com/filiptammergard/text-analyzer/issues"
   },
-  "keywords": ["text", "characters", "words", "time", "reading-time"]
+  "keywords": [
+    "text",
+    "characters",
+    "words",
+    "time",
+    "reading-time"
+  ]
 }
