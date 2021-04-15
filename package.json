@@ -1,12 +1,20 @@
 {
   "name": "text-analyzer",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Count words, seqences reading time etc in a text",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "author": "Filip Tammergård <filip@tammergard.se> (https://tammergard.se)",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/filiptammergard/text-analyzer.git"
+  },
+  "scripts": {
+    "build": "rimraf dist/ && tsc"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.4"
   }
 }
