@@ -8,9 +8,10 @@ export function countWords(text: string) {
   return words;
 }
 
-export function countSequences(text: string, sequence: string) {
-  const sequences = text.toLowerCase().split(sequence.toLowerCase()).length - 1;
-  return sequences;
+export function countSequenceOccurances(text: string, sequence: string) {
+  const occurances =
+    text.toLowerCase().split(sequence.toLowerCase()).length - 1;
+  return occurances;
 }
 
 const WORDS_PER_MINUTE = 200;
