@@ -36,6 +36,14 @@ const words = countWords(text)
 const sequences = countSequences(text, "dolor")
 // sequences = 4
 
+const caseInsensitiveSequences = countSequences(text, "lorem", { caseSensitivity: "insensitive" })
+// caseSensitiveSequences = 1
+
+const caseSensitiveSequences = countSequences(text, "lorem", { caseSensitivity: "sensitive" })
+// caseSensitiveSequences = 0
+
+Default case sensitivity is insensitive.
+
 const readingTime = getReadingTime(text)
 /*
   readingTime = {
@@ -44,9 +52,18 @@ const readingTime = getReadingTime(text)
     words: 69
   }
 */
+
+const customReadingSpeedReadingTime = getReadingTime(text, { wordsPerMinute: 100 })
+/*
+  customReadingSpeedReadingTime = {
+    milliseconds: 41400
+    minutes: 0.69
+    words: 69
+  }
+*/
 ```
 
-Average reading speed is set to 200 words per minute.
+Default reading speed is set to 200 words per minute.
 
 ## Licence
 
