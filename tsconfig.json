@@ -1,11 +1,9 @@
 {
+  "extends": "@tammergard/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["es5"],
     "module": "commonjs",
     "outDir": "dist",
-    "declaration": true,
-    "strict": true
+    "declaration": true
   },
   "include": ["index.ts"]
 }
