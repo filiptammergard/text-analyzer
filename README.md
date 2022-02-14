@@ -34,6 +34,7 @@ const words = countWords(text)
 // words = 69
 
 const sequences = countSequences(text, "dolor")
+// default case sensitivity is set to "insensitive"
 // sequences = 4
 
 const caseInsensitiveSequences = countSequences(text, "lorem", { caseSensitivity: "insensitive" })
@@ -42,9 +43,8 @@ const caseInsensitiveSequences = countSequences(text, "lorem", { caseSensitivity
 const caseSensitiveSequences = countSequences(text, "lorem", { caseSensitivity: "sensitive" })
 // caseSensitiveSequences = 0
 
-Default case sensitivity is insensitive.
-
 const readingTime = getReadingTime(text)
+// default reading speed is set to 200 words per minute
 /*
   readingTime = {
     milliseconds: 20700
@@ -62,8 +62,6 @@ const customReadingSpeedReadingTime = getReadingTime(text, { wordsPerMinute: 100
   }
 */
 ```
-
-Default reading speed is set to 200 words per minute.
 
 ## Licence
 
