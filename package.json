@@ -6,7 +6,8 @@
     "build": "tsc",
     "lint": "eslint .",
     "prettier": "prettier --write .",
-    "review": "yarn install --frozen-lockfile && yarn lint && yarn prettier"
+    "review": "yarn install --frozen-lockfile && yarn lint && yarn prettier && yarn test",
+    "test": "vitest"
   },
   "devDependencies": {
     "@tammergard/eslint-config-base": "2.2.0",
@@ -20,11 +21,12 @@
     "eslint-plugin-prettier": "4.0.0",
     "prettier": "2.5.1",
     "semantic-release": "19.0.2",
-    "typescript": "4.5.5"
+    "typescript": "4.5.5",
+    "vitest": "0.3.5"
   },
   "author": "Filip Tammergård <filip+npm@tammergard.se> (https://tammergard.se)",
   "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "dist/index.js",
     "dist/index.d.ts"
@@ -41,10 +43,6 @@
     "text",
     "characters",
     "words",
-    "time",
     "reading-time"
-  ],
-  "dependencies": {
-    "text-analyzer": "^1.4.0"
-  }
+  ]
 }
