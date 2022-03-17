@@ -425,10 +425,10 @@
   resolved "https://registry.yarnpkg.com/@tammergard/eslint-config-base/-/eslint-config-base-2.2.0.tgz#577aeb909c47e5f4bbb868511308ef3a4bef0c98"
   integrity sha512-KcgW1loxHJeljkB0Q43CloD9hn6G0soSYp9DkCT792zTtwFpux7Ixo+PBA5V4xIJTvZy6suEp9cNZyCQl/Y0xQ==
 
-"@tammergard/prettier-config@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@tammergard/prettier-config/-/prettier-config-1.4.0.tgz#547fd584653d28ba932ddddb632419f683cb9015"
-  integrity sha512-xHKxTaG16te9qPTH8pD95GLuz2iUpXyyHssE8JIzRAl9WcbwrevkfwAOG3zLB6HIVcmnq19l8rjz2qzDYpmK/w==
+"@tammergard/prettier-config@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@tammergard/prettier-config/-/prettier-config-1.5.0.tgz#53b726c4ee589e235b554931a1aa44655fdf6951"
+  integrity sha512-R+gTg/5ECvf/NbJr/ceji4t9E//6IVg/s9X/z93Fc5GzvGHvmLbuV7d71BzK+yjsz4uixduLfXimBHwy0oJmYA==
 
 "@tammergard/semantic-release-config-npm@1.0.0":
   version "1.0.0"
