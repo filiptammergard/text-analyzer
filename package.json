@@ -14,7 +14,7 @@
     "@tammergard/prettier-config": "1.5.0",
     "@tammergard/semantic-release-config-npm": "1.0.0",
     "@tammergard/tsconfig": "1.0.0",
-    "eslint": "8.11.0",
+    "eslint": "8.12.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-import": "2.25.4",
