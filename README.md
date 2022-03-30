@@ -37,10 +37,14 @@ const sequences = countSequences(text, "dolor")
 // default case sensitivity is set to "insensitive"
 // sequences = 4
 
-const caseInsensitiveSequences = countSequences(text, "lorem", { caseSensitivity: "insensitive" })
+const caseInsensitiveSequences = countSequences(text, "lorem", {
+  caseSensitivity: "insensitive",
+})
 // caseSensitiveSequences = 1
 
-const caseSensitiveSequences = countSequences(text, "lorem", { caseSensitivity: "sensitive" })
+const caseSensitiveSequences = countSequences(text, "lorem", {
+  caseSensitivity: "sensitive",
+})
 // caseSensitiveSequences = 0
 
 const readingTime = getReadingTime(text)
@@ -53,7 +57,9 @@ const readingTime = getReadingTime(text)
   }
 */
 
-const customReadingSpeedReadingTime = getReadingTime(text, { wordsPerMinute: 100 })
+const customReadingSpeedReadingTime = getReadingTime(text, {
+  wordsPerMinute: 100,
+})
 /*
   customReadingSpeedReadingTime = {
     milliseconds: 41400
