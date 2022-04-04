@@ -19,7 +19,7 @@
     "prettier": "2.6.2",
     "semantic-release": "19.0.2",
     "typescript": "4.6.3",
-    "vitest": "0.8.1"
+    "vitest": "0.8.4"
   },
   "author": "Filip Tammergård <filip+npm@tammergard.se> (https://tammergard.se)",
   "main": "dist/index.js",
