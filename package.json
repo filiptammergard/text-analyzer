@@ -4,10 +4,10 @@
   "description": "Utility functions providing possibilities to analyze text.",
   "scripts": {
     "build": "tsc",
-    "git-verify-nodiff": "./scripts/git-verify-nodiff.bash",
     "lint": "eslint .",
-    "prettier": "prettier --write .",
-    "review": "yarn install --frozen-lockfile && yarn lint && yarn prettier && yarn test && yarn git-verify-nodiff",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
+    "review": "yarn install --frozen-lockfile && yarn lint && yarn format-check && yarn test && yarn build",
     "test": "vitest"
   },
   "devDependencies": {
