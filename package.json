@@ -15,7 +15,7 @@
     "@tammergard/prettier-config": "1.5.0",
     "@tammergard/semantic-release-config-npm": "1.0.0",
     "@tammergard/tsconfig": "1.0.0",
-    "eslint": "8.18.0",
+    "eslint": "8.19.0",
     "prettier": "2.7.1",
     "semantic-release": "19.0.3",
     "typescript": "4.7.4",
