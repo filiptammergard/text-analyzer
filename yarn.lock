@@ -440,10 +440,12 @@
   resolved "https://registry.yarnpkg.com/@tammergard/prettier-config/-/prettier-config-1.5.0.tgz#53b726c4ee589e235b554931a1aa44655fdf6951"
   integrity sha512-R+gTg/5ECvf/NbJr/ceji4t9E//6IVg/s9X/z93Fc5GzvGHvmLbuV7d71BzK+yjsz4uixduLfXimBHwy0oJmYA==
 
-"@tammergard/semantic-release-config-npm@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@tammergard/semantic-release-config-npm/-/semantic-release-config-npm-1.0.0.tgz#cff1ef92b6cf8e068f5bce31900cb2a6031db3ff"
-  integrity sha512-XojzyHqxUjitq4XYqrDOxMMUE3J+V8yfvzV1+N13wOxQgRZq7S1r/jU7zXsf4uJ8vRo1ZdtYv11XNJOYysO8+g==
+"@tammergard/semantic-release-config-npm@1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@tammergard/semantic-release-config-npm/-/semantic-release-config-npm-1.1.0.tgz#220d906fd67942b2d22998f27b6930922a01f38a"
+  integrity sha512-gWXgj0vW5rv6Y/OzP4Kx4PGTkQdq2KGwCtoVrS9Dcw5Sm/CtyWY+dMGZPqW/WWKrF8gf0scq3OK6/6/bVsIL8Q==
+  dependencies:
+    conventional-changelog-conventionalcommits "5.0.0"
 
 "@tammergard/tsconfig@1.0.0":
   version "1.0.0"
@@ -955,6 +957,15 @@ conventional-changelog-angular@^5.0.0:
   integrity sha512-i/gipMxs7s8L/QeuavPF2hLnJgH6pEZAttySB6aiQLWcX3puWDL3ACVmvBhJGxnAy52Qc15ua26BufY6KpmrVA==
   dependencies:
     compare-func "^2.0.0"
+    q "^1.5.1"
+
+conventional-changelog-conventionalcommits@5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/conventional-changelog-conventionalcommits/-/conventional-changelog-conventionalcommits-5.0.0.tgz#41bdce54eb65a848a4a3ffdca93e92fa22b64a86"
+  integrity sha512-lCDbA+ZqVFQGUj7h9QBKoIpLhl8iihkO0nCTyRNzuXtcd7ubODpYB04IFy31JloiJgG0Uovu8ot8oxRzn7Nwtw==
+  dependencies:
+    compare-func "^2.0.0"
+    lodash "^4.17.15"
     q "^1.5.1"
 
 conventional-changelog-writer@^5.0.0:
