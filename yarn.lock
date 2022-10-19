@@ -445,10 +445,10 @@
     eslint-plugin-import "2.25.4"
     eslint-plugin-prettier "4.0.0"
 
-"@tammergard/prettier-config@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@tammergard/prettier-config/-/prettier-config-1.5.0.tgz#53b726c4ee589e235b554931a1aa44655fdf6951"
-  integrity sha512-R+gTg/5ECvf/NbJr/ceji4t9E//6IVg/s9X/z93Fc5GzvGHvmLbuV7d71BzK+yjsz4uixduLfXimBHwy0oJmYA==
+"@tammergard/prettier-config@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@tammergard/prettier-config/-/prettier-config-2.0.0.tgz#d2982372728c28ab6e4efda92ea8a2e3acabec82"
+  integrity sha512-btdjGQ8/70ILacX4bjLgEWO8mZ8Vh46kcKTBvzDqht9SsmqOmfRSJlDR2rsWRYHasx09ijbSFcamk+QdEQXbOg==
 
 "@tammergard/semantic-release-config-npm@1.1.0":
   version "1.1.0"
