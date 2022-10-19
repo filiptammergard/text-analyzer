@@ -1,3 +1,3 @@
 module.exports = {
-  ...require("@tammergard/prettier-config"),
+	...require("@tammergard/prettier-config"),
 }

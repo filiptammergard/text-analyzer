@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ["@tammergard/eslint-config-base"],
+	extends: ["@tammergard/eslint-config-base"],
 }

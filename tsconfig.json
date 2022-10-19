@@ -1,9 +1,9 @@
 {
-  "extends": "@tammergard/tsconfig/tsconfig.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "outDir": "dist",
-    "declaration": true
-  },
-  "include": ["index.ts"]
+	"extends": "@tammergard/tsconfig/tsconfig.json",
+	"compilerOptions": {
+		"module": "commonjs",
+		"outDir": "dist",
+		"declaration": true
+	},
+	"include": ["index.ts"]
 }
