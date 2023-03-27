@@ -17,7 +17,7 @@
 		"@tammergard/tsconfig": "1.0.0",
 		"eslint": "8.36.0",
 		"prettier": "2.8.6",
-		"semantic-release": "20.1.3",
+		"semantic-release": "21.0.0",
 		"typescript": "4.9.5",
 		"vitest": "0.29.7"
 	},
