@@ -1,20 +1,25 @@
 name: Review
 
-on: pull_request
+on: push
 
 jobs:
   review:
+    name: Review
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          fetch-depth: 0
+          version: 8
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           node-version: 18
+          cache: pnpm
 
       - name: Review
-        run: yarn review
+        run: pnpm review

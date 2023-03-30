@@ -7,7 +7,7 @@
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"format-check": "prettier --check .",
-		"review": "yarn install --frozen-lockfile && yarn lint && yarn format-check && yarn test && yarn build",
+		"review": "pnpm install --frozen-lockfile && pnpm lint && pnpm format-check && pnpm test && pnpm build",
 		"test": "vitest"
 	},
 	"devDependencies": {
