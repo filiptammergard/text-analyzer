@@ -604,10 +604,10 @@
   dependencies:
     conventional-changelog-conventionalcommits "5.0.0"
 
-"@tammergard/tsconfig@1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@tammergard/tsconfig/-/tsconfig-1.0.0.tgz#cedb3a4c876dff9f987f43bcfaa8ea14b672bf80"
-  integrity sha512-D/tYvyL6eYZSOAMCIW0T2RApdvVukqAFPrUokqT3xpcx2fGDT/7qKHSDpXdkookAPCre40ETKhqFAxf9n1f7dw==
+"@tammergard/tsconfig@2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@tammergard/tsconfig/-/tsconfig-2.0.0.tgz#038c1e441f8d021e7d9737c11c5ae04a1bebcfbf"
+  integrity sha512-yFY83QwrmOT7mKTWlqg85ZNCHAMSKfZhXfBq8wDe2sMsO9uvQU12hi+6tUMWm2IAdg74rYbmSigDPmT9LeGKHw==
 
 "@tootallnate/once@2":
   version "2.0.0"
@@ -4736,10 +4736,10 @@ typed-array-length@^1.0.4:
     for-each "^0.3.3"
     is-typed-array "^1.1.9"
 
-typescript@4.9.5:
-  version "4.9.5"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.5.tgz#095979f9bcc0d09da324d58d03ce8f8374cbe65a"
-  integrity sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==
+typescript@5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-5.0.2.tgz#891e1a90c5189d8506af64b9ef929fca99ba1ee5"
+  integrity sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==
 
 ufo@^1.1.0:
   version "1.1.0"
