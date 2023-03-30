@@ -3,7 +3,7 @@
 	"version": "1.6.0",
 	"description": "Utility functions providing possibilities to analyze text.",
 	"scripts": {
-		"build": "tsc",
+		"build": "tsup src/index.ts --format esm,cjs --dts",
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"format-check": "prettier --check .",
@@ -17,14 +17,17 @@
 		"@tammergard/tsconfig": "1.0.0",
 		"eslint": "8.37.0",
 		"prettier": "2.8.7",
+		"tsup": "6.7.0",
 		"typescript": "5.0.2",
 		"vitest": "0.29.8"
 	},
 	"files": [
 		"dist/index.js",
+		"dist/index.mjs",
 		"dist/index.d.ts"
 	],
 	"main": "dist/index.js",
+	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"keywords": [
 		"text",
