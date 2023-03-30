@@ -12,6 +12,9 @@ npm install text-analyzer
 
 # yarn
 yarn add text-analyzer
+
+# pnpm
+pnpm add text-analyzer
 ```
 
 ## Usage
