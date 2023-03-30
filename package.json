@@ -11,6 +11,7 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
+		"@changesets/cli": "^2.26.1",
 		"@tammergard/eslint-config-base": "3.2.0",
 		"@tammergard/prettier-config": "2.0.0",
 		"@tammergard/semantic-release-config-npm": "1.2.0",
