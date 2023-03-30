@@ -20,25 +20,30 @@
 		"typescript": "5.0.2",
 		"vitest": "0.29.8"
 	},
-	"author": "Filip Tammergård <filip+npm@tammergard.se> (https://tammergard.se)",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
 	"files": [
 		"dist/index.js",
 		"dist/index.d.ts"
 	],
-	"license": "MIT",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/filiptammergard/text-analyzer.git"
-	},
-	"bugs": {
-		"url": "https://github.com/filiptammergard/text-analyzer/issues"
-	},
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
 	"keywords": [
 		"text",
 		"characters",
 		"words",
 		"reading-time"
-	]
+	],
+	"homepage": "https://github.com/filiptammergard/text-analyzer#readme",
+	"bugs": {
+		"url": "https://github.com/filiptammergard/text-analyzer/issues"
+	},
+	"license": "MIT",
+	"author": {
+		"name": "Filip Tammergård",
+		"email": "filip+npm@tammergard.se",
+		"url": "https://tammergard.se"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/filiptammergard/text-analyzer.git"
+	}
 }
