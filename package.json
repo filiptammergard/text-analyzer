@@ -7,6 +7,7 @@
 		"lint": "eslint .",
 		"format": "prettier --write .",
 		"format-check": "prettier --check .",
+		"release": "pnpm build && pnpm changeset publish",
 		"review": "pnpm install --frozen-lockfile && pnpm lint && pnpm format-check && pnpm test && pnpm build",
 		"test": "vitest"
 	},
