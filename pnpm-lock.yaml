@@ -2,7 +2,7 @@ lockfileVersion: '6.0'
 
 devDependencies:
   '@changesets/cli':
-    specifier: ^2.26.1
+    specifier: 2.26.1
     version: 2.26.1
   '@tammergard/eslint-config-base':
     specifier: 3.2.0
