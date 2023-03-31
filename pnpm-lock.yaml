@@ -12,7 +12,7 @@ devDependencies:
     version: 2.0.0(prettier@2.8.7)
   '@tammergard/tsconfig':
     specifier: 2.2.0
-    version: 2.2.0(typescript@5.0.2)
+    version: 2.2.0(typescript@5.0.3)
   eslint:
     specifier: 8.37.0
     version: 8.37.0
@@ -21,10 +21,10 @@ devDependencies:
     version: 2.8.7
   tsup:
     specifier: 6.7.0
-    version: 6.7.0(typescript@5.0.2)
+    version: 6.7.0(typescript@5.0.3)
   typescript:
-    specifier: 5.0.2
-    version: 5.0.2
+    specifier: 5.0.3
+    version: 5.0.3
   vitest:
     specifier: 0.29.8
     version: 0.29.8
@@ -566,12 +566,12 @@ packages:
       prettier: 2.8.7
     dev: true
 
-  /@tammergard/tsconfig@2.2.0(typescript@5.0.2):
+  /@tammergard/tsconfig@2.2.0(typescript@5.0.3):
     resolution: {integrity: sha512-U83DSa4TFOzcIf7hYW5J/FprQMgvau8tpJKELJX+x+IH6UFIByJ3SpzIbwPSAwNFuxswlnEzyC9lq1jOHbNmRQ==}
     peerDependencies:
       typescript: '5'
     dependencies:
-      typescript: 5.0.2
+      typescript: 5.0.3
     dev: true
 
   /@types/chai-subset@1.3.3:
@@ -3057,7 +3057,7 @@ packages:
       strip-bom: 3.0.0
     dev: true
 
-  /tsup@6.7.0(typescript@5.0.2):
+  /tsup@6.7.0(typescript@5.0.3):
     resolution: {integrity: sha512-L3o8hGkaHnu5TdJns+mCqFsDBo83bJ44rlK7e6VdanIvpea4ArPcU3swWGsLVbXak1PqQx/V+SSmFPujBK+zEQ==}
     engines: {node: '>=14.18'}
     hasBin: true
@@ -3087,7 +3087,7 @@ packages:
       source-map: 0.8.0-beta.0
       sucrase: 3.31.0
       tree-kill: 1.2.2
-      typescript: 5.0.2
+      typescript: 5.0.3
     transitivePeerDependencies:
       - supports-color
       - ts-node
@@ -3147,8 +3147,8 @@ packages:
       is-typed-array: 1.1.10
     dev: true
 
-  /typescript@5.0.2:
-    resolution: {integrity: sha512-wVORMBGO/FAs/++blGNeAVdbNKtIh1rbBL2EyQ1+J9lClJ93KiiKe8PmFIVdXhHcyv44SL9oglmfeSsndo0jRw==}
+  /typescript@5.0.3:
+    resolution: {integrity: sha512-xv8mOEDnigb/tN9PSMTwSEqAnUvkoXMQlicOb0IUVDBSQCgBSaAAROUZYy2IcUy5qU6XajK5jjjO7TMWqBTKZA==}
     engines: {node: '>=12.20'}
     hasBin: true
     dev: true
