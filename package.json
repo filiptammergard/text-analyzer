@@ -49,5 +49,8 @@
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/filiptammergard/text-analyzer.git"
+	},
+	"publishConfig": {
+		"provenance": true
 	}
 }
