@@ -8,8 +8,8 @@ devDependencies:
     specifier: 4.0.1
     version: 4.0.1(eslint@8.39.0)(prettier@2.8.8)
   '@tammergard/prettier-config':
-    specifier: 2.0.0
-    version: 2.0.0(prettier@2.8.8)
+    specifier: 2.0.1
+    version: 2.0.1(prettier@2.8.8)
   '@tammergard/tsconfig':
     specifier: 2.4.0
     version: 2.4.0(typescript@5.0.4)
@@ -562,8 +562,8 @@ packages:
       - supports-color
     dev: true
 
-  /@tammergard/prettier-config@2.0.0(prettier@2.8.8):
-    resolution: {integrity: sha512-btdjGQ8/70ILacX4bjLgEWO8mZ8Vh46kcKTBvzDqht9SsmqOmfRSJlDR2rsWRYHasx09ijbSFcamk+QdEQXbOg==}
+  /@tammergard/prettier-config@2.0.1(prettier@2.8.8):
+    resolution: {integrity: sha512-00aCh4bfuueHKGlkSnEwi7biIIDAV7bnLP6PlA/7HDPSTQfajLzn4wnvctVFRBKfjW40nLwCLs7PUSwuTuP+jw==}
     peerDependencies:
       prettier: ^2.6.0
     dependencies:
