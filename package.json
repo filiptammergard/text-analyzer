@@ -51,6 +51,7 @@
 		"url": "git+https://github.com/filiptammergard/text-analyzer.git"
 	},
 	"publishConfig": {
+		"access": "public",
 		"provenance": true
 	}
 }
