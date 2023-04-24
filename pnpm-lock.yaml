@@ -5,8 +5,8 @@ devDependencies:
     specifier: 2.26.1
     version: 2.26.1
   '@tammergard/eslint-config-base':
-    specifier: 4.0.0
-    version: 4.0.0(eslint@8.39.0)(prettier@2.8.8)
+    specifier: 4.0.1
+    version: 4.0.1(eslint@8.39.0)(prettier@2.8.8)
   '@tammergard/prettier-config':
     specifier: 2.0.0
     version: 2.0.0(prettier@2.8.8)
@@ -543,8 +543,8 @@ packages:
       fastq: 1.15.0
     dev: true
 
-  /@tammergard/eslint-config-base@4.0.0(eslint@8.39.0)(prettier@2.8.8):
-    resolution: {integrity: sha512-qdEQR4UHqIM47XarTAN35FZgJMwV9XEkY9TBEH50puxbYUJgfnMRSrMrS2CUKxU/tK6Zhh8K31GarX15/+D2/A==}
+  /@tammergard/eslint-config-base@4.0.1(eslint@8.39.0)(prettier@2.8.8):
+    resolution: {integrity: sha512-WihbCVqSqBMk4TEkBmuOnZenV7IWQKtaROEJ+9JxmW2bmnoc5yE3HxFReBpvOMb5WI3gTP16m8t9OrOm+UG76Q==}
     peerDependencies:
       eslint: '>=8.37.0'
       prettier: '>=2.8.7'
