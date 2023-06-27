@@ -12,7 +12,7 @@
 		"test": "vitest"
 	},
 	"devDependencies": {
-		"@changesets/cli": "2.26.1",
+		"@changesets/cli": "2.26.2",
 		"@tammergard/eslint-config-base": "4.0.1",
 		"@tammergard/prettier-config": "2.0.1",
 		"@tammergard/tsconfig": "2.6.0",
