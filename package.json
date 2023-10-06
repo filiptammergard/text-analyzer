@@ -16,7 +16,7 @@
 		"@tammergard/eslint-config-base": "4.0.4",
 		"@tammergard/prettier-config": "2.0.2",
 		"@tammergard/tsconfig": "2.6.0",
-		"eslint": "8.50.0",
+		"eslint": "8.51.0",
 		"prettier": "3.0.3",
 		"tsup": "7.2.0",
 		"typescript": "5.2.2",
