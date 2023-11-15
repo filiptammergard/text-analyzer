@@ -15,8 +15,8 @@ devDependencies:
     specifier: 2.1.0
     version: 2.1.0(prettier@3.1.0)
   '@tammergard/tsconfig':
-    specifier: 2.6.0
-    version: 2.6.0(typescript@5.2.2)
+    specifier: 2.7.0
+    version: 2.7.0(typescript@5.2.2)
   eslint:
     specifier: 8.53.0
     version: 8.53.0
@@ -826,8 +826,8 @@ packages:
       prettier: 3.1.0
     dev: true
 
-  /@tammergard/tsconfig@2.6.0(typescript@5.2.2):
-    resolution: {integrity: sha512-SrPEgMHSwlHbj3mDIbQqdznfiLZAjfbvKiACLm+SNwK7jdfLwHmlUxoEMv/+Pwj1FoSMc8op7Q3+Le7byOs7Wg==}
+  /@tammergard/tsconfig@2.7.0(typescript@5.2.2):
+    resolution: {integrity: sha512-RN5Bpcyq6wG+d1kzrEFnK4EpTnZsFK9lyXMvtW1iCkHpGwDAd2dH0kAHDtxTU9p19QG4cd4PKzIE4yOl6YoIlg==}
     peerDependencies:
       typescript: '5'
     dependencies:
