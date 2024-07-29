@@ -19,7 +19,7 @@ importers:
         version: 2.1.0(prettier@3.3.3)
       '@tammergard/tsconfig':
         specifier: 2.8.0
-        version: 2.8.0(typescript@5.5.3)
+        version: 2.8.0(typescript@5.5.4)
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -28,10 +28,10 @@ importers:
         version: 3.3.3
       tsup:
         specifier: 8.2.3
-        version: 8.2.3(postcss@8.4.38)(typescript@5.5.3)
+        version: 8.2.3(postcss@8.4.38)(typescript@5.5.4)
       typescript:
-        specifier: 5.5.3
-        version: 5.5.3
+        specifier: 5.5.4
+        version: 5.5.4
       vitest:
         specifier: 2.0.4
         version: 2.0.4
@@ -2079,8 +2079,8 @@ packages:
   typed-array-length@1.0.4:
     resolution: {integrity: sha512-KjZypGq+I/H7HI5HlOoGHkWUUGq+Q0TPhQurLbyrVrvnKTBgzLhIJ7j6J/XTQOi0d1RjyZ0wdas8bKs2p0x3Ng==}
 
-  typescript@5.5.3:
-    resolution: {integrity: sha512-/hreyEujaB0w76zKo6717l3L0o/qEUtRgdvUBvlkhoWeOVMjMuHNHk0BRBzikzuGDqNmPQbg5ifMEqsHLiIUcQ==}
+  typescript@5.5.4:
+    resolution: {integrity: sha512-Mtq29sKDAEYP7aljRgtPOpTvOfbwRWlS6dPRzwjdE+C0R4brX/GUyhHSecbHMFLNBLcJIPt9nl9yG5TZ1weH+Q==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -2753,9 +2753,9 @@ snapshots:
     dependencies:
       prettier: 3.3.3
 
-  '@tammergard/tsconfig@2.8.0(typescript@5.5.3)':
+  '@tammergard/tsconfig@2.8.0(typescript@5.5.4)':
     dependencies:
-      typescript: 5.5.3
+      typescript: 5.5.4
 
   '@types/estree@1.0.5': {}
 
@@ -4265,7 +4265,7 @@ snapshots:
 
   tslib@2.6.0: {}
 
-  tsup@8.2.3(postcss@8.4.38)(typescript@5.5.3):
+  tsup@8.2.3(postcss@8.4.38)(typescript@5.5.4):
     dependencies:
       bundle-require: 5.0.0(esbuild@0.23.0)
       cac: 6.7.14
@@ -4285,7 +4285,7 @@ snapshots:
       tree-kill: 1.2.2
     optionalDependencies:
       postcss: 8.4.38
-      typescript: 5.5.3
+      typescript: 5.5.4
     transitivePeerDependencies:
       - jiti
       - supports-color
@@ -4325,7 +4325,7 @@ snapshots:
       for-each: 0.3.3
       is-typed-array: 1.1.12
 
-  typescript@5.5.3: {}
+  typescript@5.5.4: {}
 
   unbox-primitive@1.0.2:
     dependencies:
