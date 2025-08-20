@@ -54,5 +54,5 @@
 		"access": "public",
 		"provenance": true
 	},
-	"packageManager": "pnpm@9.5.0"
+	"packageManager": "pnpm@10.15.0"
 }
