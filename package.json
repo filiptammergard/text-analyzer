@@ -15,7 +15,7 @@
 		"@changesets/cli": "2.27.9",
 		"@tammergard/eslint-config-base": "5.0.6",
 		"@tammergard/prettier-config": "2.1.0",
-		"@tammergard/tsconfig": "2.8.0",
+		"@tammergard/tsconfig": "2.9.0",
 		"eslint": "8.57.1",
 		"prettier": "3.3.3",
 		"tsup": "8.3.5",
