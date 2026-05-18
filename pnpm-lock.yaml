@@ -15,8 +15,8 @@ importers:
         specifier: 5.0.6
         version: 5.0.6(eslint@8.57.1)(prettier@3.8.3)
       '@tammergard/prettier-config':
-        specifier: 2.1.0
-        version: 2.1.0(prettier@3.8.3)
+        specifier: 3.0.0
+        version: 3.0.0(prettier@3.8.3)
       '@tammergard/tsconfig':
         specifier: 2.10.0
         version: 2.10.0(typescript@5.9.3)
@@ -760,10 +760,10 @@ packages:
       eslint: '>=8.52.0'
       prettier: '>=3.0.3'
 
-  '@tammergard/prettier-config@2.1.0':
-    resolution: {integrity: sha512-1jhoyqQ6ovcOV3fqNPfJJFyyAQtZh5Mw2eSRS20Zd2oty5wq+cmpB3u7d9DoCe3JQrxCflBuSeWtqSv/2A5dig==}
+  '@tammergard/prettier-config@3.0.0':
+    resolution: {integrity: sha512-UEkgHSambDW4MozqZ3Uq7nfWtuvR3R2rLA1lV/eoRvuo6rhkKZDJsxyfDSl13+j8CV2ydqNts7WE9FI1EN9DNA==}
     peerDependencies:
-      prettier: '>=2.6.0'
+      prettier: '>=3.0.0'
 
   '@tammergard/tsconfig@2.10.0':
     resolution: {integrity: sha512-O+6u3GtsxbcSSAfzEnQQ+Bk+7LT2Jiv7nazNXoFzNT0PLer4c1Jxgp+Ki7LCKk+AdQNYwO2sVtQqsiKitgNXdQ==}
@@ -2791,7 +2791,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  '@tammergard/prettier-config@2.1.0(prettier@3.8.3)':
+  '@tammergard/prettier-config@3.0.0(prettier@3.8.3)':
     dependencies:
       prettier: 3.8.3
 
