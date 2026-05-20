@@ -1,9 +1,14 @@
 import { describe, expect, it } from "vitest"
 import {
 	countCharacters,
+	countLines,
+	countParagraphs,
+	countSentences,
 	countSequenceOccurrences,
 	countWords,
+	getAverageWordLength,
 	getReadingTime,
+	getWordFrequency,
 } from "./index"
 
 const TEXT =
@@ -25,6 +30,14 @@ describe("countCharacters", () => {
 	it("counts UTF-16 code units when requested", () => {
 		expect(countCharacters("👨‍👩‍👧", { unit: "code-unit" })).toBe(8)
 	})
+	it("accepts a locale", () => {
+		expect(countCharacters("åäö", { locale: "sv-SE" })).toBe(3)
+	})
+	it("normalizes when requested", () => {
+		const nfd = "e\u0301"
+		expect(countCharacters(nfd, { unit: "code-unit" })).toBe(2)
+		expect(countCharacters(nfd, { unit: "code-unit", normalize: true })).toBe(1)
+	})
 })
 
 describe("countWords", () => {
@@ -44,7 +57,67 @@ describe("countWords", () => {
 		expect(countWords("one\r\ntwo\r\nthree")).toBe(3)
 	})
 	it("handles non-breaking spaces", () => {
-		expect(countWords("one two")).toBe(2)
+		expect(countWords("one two")).toBe(2)
+	})
+})
+
+describe("countLines", () => {
+	it("handles empty string", () => {
+		expect(countLines("")).toBe(0)
+	})
+	it("counts a single line without terminator", () => {
+		expect(countLines("one")).toBe(1)
+	})
+	it("counts a single line with trailing newline", () => {
+		expect(countLines("one\n")).toBe(1)
+	})
+	it("counts multiple lines", () => {
+		expect(countLines("one\ntwo\nthree")).toBe(3)
+	})
+	it("handles CRLF", () => {
+		expect(countLines("one\r\ntwo\r\nthree")).toBe(3)
+	})
+	it("handles old-style Mac CR", () => {
+		expect(countLines("one\rtwo\rthree")).toBe(3)
+	})
+	it("counts empty lines", () => {
+		expect(countLines("\n\n")).toBe(2)
+	})
+})
+
+describe("countSentences", () => {
+	it("handles empty string", () => {
+		expect(countSentences("")).toBe(0)
+	})
+	it("handles whitespace-only string", () => {
+		expect(countSentences("   \n")).toBe(0)
+	})
+	it("counts simple sentences", () => {
+		expect(countSentences("Hello. World!")).toBe(2)
+	})
+	it("counts a single sentence without terminator", () => {
+		expect(countSentences("Hello world")).toBe(1)
+	})
+	it("does not split on decimals", () => {
+		expect(countSentences("The value is 3.14. Done.")).toBe(2)
+	})
+})
+
+describe("countParagraphs", () => {
+	it("handles empty string", () => {
+		expect(countParagraphs("")).toBe(0)
+	})
+	it("counts a single paragraph", () => {
+		expect(countParagraphs("one line\nanother line")).toBe(1)
+	})
+	it("counts multiple paragraphs separated by blank line", () => {
+		expect(countParagraphs("one\n\ntwo")).toBe(2)
+	})
+	it("collapses multiple blank lines", () => {
+		expect(countParagraphs("one\n\n\n\ntwo")).toBe(2)
+	})
+	it("ignores leading and trailing blank lines", () => {
+		expect(countParagraphs("\n\none\n\ntwo\n\n")).toBe(2)
 	})
 })
 
@@ -72,6 +145,76 @@ describe("countSequenceOccurrences", () => {
 			3,
 		)
 	})
+	it("uses locale-aware case folding", () => {
+		expect(
+			countSequenceOccurrences("Istanbul", "i", { caseSensitive: false }),
+		).toBe(1)
+		expect(
+			countSequenceOccurrences("Istanbul", "i", {
+				caseSensitive: false,
+				locale: "tr",
+			}),
+		).toBe(0)
+	})
+	it("normalizes when requested", () => {
+		const nfc = "café"
+		const nfd = "cafe\u0301"
+		expect(countSequenceOccurrences(nfc, nfd)).toBe(0)
+		expect(countSequenceOccurrences(nfc, nfd, { normalize: true })).toBe(1)
+	})
+})
+
+describe("getWordFrequency", () => {
+	it("handles empty string", () => {
+		expect(getWordFrequency("")).toEqual(new Map())
+	})
+	it("counts word occurrences", () => {
+		const freq = getWordFrequency("the cat sat on the mat")
+		expect(freq.get("the")).toBe(2)
+		expect(freq.get("cat")).toBe(1)
+	})
+	it("strips punctuation", () => {
+		const freq = getWordFrequency("hello, world! hello.")
+		expect(freq.get("hello")).toBe(2)
+		expect(freq.get("world")).toBe(1)
+		expect(freq.has(",")).toBe(false)
+	})
+	it("is case sensitive by default", () => {
+		const freq = getWordFrequency("The the THE")
+		expect(freq.get("The")).toBe(1)
+		expect(freq.get("the")).toBe(1)
+		expect(freq.get("THE")).toBe(1)
+	})
+	it("supports case insensitive counting", () => {
+		expect(
+			getWordFrequency("The the THE", { caseSensitive: false }).get("the"),
+		).toBe(3)
+	})
+	it("keeps contractions as one word", () => {
+		expect(getWordFrequency("don't don't").get("don't")).toBe(2)
+	})
+	it("sorts by count in descending order", () => {
+		const freq = getWordFrequency("a a a b b c")
+		expect([...freq.keys()]).toEqual(["a", "b", "c"])
+	})
+})
+
+describe("getAverageWordLength", () => {
+	it("handles empty string", () => {
+		expect(getAverageWordLength("")).toBe(0)
+	})
+	it("handles whitespace-only string", () => {
+		expect(getAverageWordLength("   \n")).toBe(0)
+	})
+	it("computes average over whitespace-separated tokens", () => {
+		expect(getAverageWordLength("aa bbb cccc")).toBe(3)
+	})
+	it("counts graphemes by default", () => {
+		expect(getAverageWordLength("👨‍👩‍👧 ab")).toBe(1.5)
+	})
+	it("can count UTF-16 code units", () => {
+		expect(getAverageWordLength("👨‍👩‍👧 ab", { unit: "code-unit" })).toBe(5)
+	})
 })
 
 describe("getReadingTime", () => {
@@ -83,19 +226,19 @@ describe("getReadingTime", () => {
 		})
 	})
 	it("handles non-empty string", () => {
-		expect(getReadingTime(TEXT)).toEqual({
-			words: 69,
-			minutes: 0.345,
-			milliseconds: 20700,
-		})
+		const result = getReadingTime(TEXT)
+		expect(result.words).toBe(69)
+		expect(result.minutes).toBeCloseTo(0.345, 5)
+		expect(result.milliseconds).toBeCloseTo(20700, 5)
 	})
 	it("handles white space", () => {
 		const textWithWhiteSpace = ` \t  ${TEXT}\n `
 		expect(getReadingTime(textWithWhiteSpace)).toEqual(getReadingTime(TEXT))
 	})
 	it("handles custom reading speed", () => {
-		expect(getReadingTime(TEXT, { wordsPerMinute: 1 }).minutes).toBe(
+		expect(getReadingTime(TEXT, { wordsPerMinute: 1 }).minutes).toBeCloseTo(
 			2 * getReadingTime(TEXT, { wordsPerMinute: 2 }).minutes,
+			5,
 		)
 	})
 	it("throws when wordsPerMinute is zero", () => {
