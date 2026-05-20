@@ -1,7 +1,7 @@
-import { assert, describe, it } from "vitest"
+import { describe, expect, it } from "vitest"
 import {
 	countCharacters,
-	countSequenceOccurances,
+	countSequenceOccurrences,
 	countWords,
 	getReadingTime,
 } from "./index"
@@ -11,82 +11,101 @@ const TEXT =
 
 describe("countCharacters", () => {
 	it("handles empty string", () => {
-		assert.equal(countCharacters(""), 0)
+		expect(countCharacters("")).toBe(0)
 	})
 	it("handles non-empty string", () => {
-		assert.equal(countCharacters("text"), 4)
+		expect(countCharacters("text")).toBe(4)
 	})
 	it("handles white space", () => {
-		assert.equal(countCharacters("\n \t"), 3)
+		expect(countCharacters("\n \t")).toBe(3)
+	})
+	it("counts emoji as one grapheme by default", () => {
+		expect(countCharacters("👨‍👩‍👧")).toBe(1)
+	})
+	it("counts UTF-16 code units when requested", () => {
+		expect(countCharacters("👨‍👩‍👧", { unit: "code-unit" })).toBe(8)
 	})
 })
 
 describe("countWords", () => {
 	it("handles empty string", () => {
-		assert.equal(countWords(""), 0)
+		expect(countWords("")).toBe(0)
 	})
 	it("handles non-empty string", () => {
-		assert.equal(countWords("text text text"), 3)
+		expect(countWords("text text text")).toBe(3)
 	})
 	it("handles white space", () => {
-		assert.equal(countWords("\n \t"), 0)
+		expect(countWords("\n \t")).toBe(0)
 	})
 	it("handles leading and trailing white space", () => {
-		assert.equal(countWords(" text  \n"), 1)
+		expect(countWords(" text  \n")).toBe(1)
+	})
+	it("handles CRLF line endings", () => {
+		expect(countWords("one\r\ntwo\r\nthree")).toBe(3)
+	})
+	it("handles non-breaking spaces", () => {
+		expect(countWords("one two")).toBe(2)
 	})
 })
 
-describe("countSequenceOccurances", () => {
-	it("handles empty string", () => {
-		assert.equal(countSequenceOccurances("", "text"), 0)
+describe("countSequenceOccurrences", () => {
+	it("handles empty text", () => {
+		expect(countSequenceOccurrences("", "text")).toBe(0)
 	})
-	it("handles non-empty string", () => {
-		assert.equal(countSequenceOccurances(TEXT, "dolor"), 4)
+	it("handles empty sequence", () => {
+		expect(countSequenceOccurrences("abc", "")).toBe(0)
 	})
-	it("handles case insensitive counting", () => {
-		assert.equal(countSequenceOccurances(TEXT, "doLOR"), 4)
+	it("is case sensitive by default", () => {
+		expect(countSequenceOccurrences(TEXT, "dolor")).toBe(4)
+		expect(countSequenceOccurrences(TEXT, "Dolor")).toBe(0)
 	})
-	it("handles case sensitive counting", () => {
-		assert.equal(
-			countSequenceOccurances(TEXT, "doLOR", {
-				caseSensitivity: "sensitive",
-			}),
-			0,
+	it("supports case insensitive matching", () => {
+		expect(
+			countSequenceOccurrences(TEXT, "doLOR", { caseSensitive: false }),
+		).toBe(4)
+	})
+	it("does not count overlapping matches by default", () => {
+		expect(countSequenceOccurrences("aaaa", "aa")).toBe(2)
+	})
+	it("counts overlapping matches when requested", () => {
+		expect(countSequenceOccurrences("aaaa", "aa", { overlapping: true })).toBe(
+			3,
 		)
 	})
 })
 
 describe("getReadingTime", () => {
 	it("handles empty string", () => {
-		assert.equal(getReadingTime("").words, 0)
-		assert.equal(getReadingTime("").minutes, 0)
-		assert.equal(getReadingTime("").milliseconds, 0)
+		expect(getReadingTime("")).toEqual({
+			words: 0,
+			minutes: 0,
+			milliseconds: 0,
+		})
 	})
 	it("handles non-empty string", () => {
-		assert.equal(getReadingTime(TEXT).words, 69)
-		assert.equal(getReadingTime(TEXT).minutes, 0.345)
-		assert.equal(getReadingTime(TEXT).milliseconds, 20700)
+		expect(getReadingTime(TEXT)).toEqual({
+			words: 69,
+			minutes: 0.345,
+			milliseconds: 20700,
+		})
 	})
 	it("handles white space", () => {
 		const textWithWhiteSpace = ` \t  ${TEXT}\n `
-		assert.deepEqual(getReadingTime(TEXT), getReadingTime(textWithWhiteSpace))
+		expect(getReadingTime(textWithWhiteSpace)).toEqual(getReadingTime(TEXT))
 	})
 	it("handles custom reading speed", () => {
-		assert.notEqual(
-			getReadingTime(TEXT),
-			getReadingTime(TEXT, { wordsPerMinute: 100 }),
-		)
-		assert.equal(
-			getReadingTime(TEXT, { wordsPerMinute: 1 }).words,
-			getReadingTime(TEXT, { wordsPerMinute: 2 }).words,
-		)
-		assert.equal(
-			getReadingTime(TEXT, { wordsPerMinute: 1 }).minutes,
+		expect(getReadingTime(TEXT, { wordsPerMinute: 1 }).minutes).toBe(
 			2 * getReadingTime(TEXT, { wordsPerMinute: 2 }).minutes,
 		)
-		assert.equal(
-			getReadingTime(TEXT, { wordsPerMinute: 1 }).milliseconds,
-			2 * getReadingTime(TEXT, { wordsPerMinute: 2 }).milliseconds,
+	})
+	it("throws when wordsPerMinute is zero", () => {
+		expect(() => getReadingTime(TEXT, { wordsPerMinute: 0 })).toThrow(
+			RangeError,
+		)
+	})
+	it("throws when wordsPerMinute is negative", () => {
+		expect(() => getReadingTime(TEXT, { wordsPerMinute: -1 })).toThrow(
+			RangeError,
 		)
 	})
 })
