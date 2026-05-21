@@ -1,6 +1,6 @@
 # text-analyzer
 
-Utility functions providing possibilities to analyze text.
+Analyze text: count characters, words, sentences, paragraphs, and reading time.
 
 ## Installation
 
@@ -8,11 +8,11 @@ Utility functions providing possibilities to analyze text.
 # npm
 npm install text-analyzer
 
-# yarn
-yarn add text-analyzer
-
 # pnpm
 pnpm add text-analyzer
+
+# bun
+bun add text-analyzer
 ```
 
 ## Usage

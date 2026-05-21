@@ -34,7 +34,7 @@ describe("countCharacters", () => {
 		expect(countCharacters("åäö", { locale: "sv-SE" })).toBe(3)
 	})
 	it("normalizes when requested", () => {
-		const nfd = "e\u0301"
+		const nfd = "é"
 		expect(countCharacters(nfd, { unit: "code-unit" })).toBe(2)
 		expect(countCharacters(nfd, { unit: "code-unit", normalize: true })).toBe(1)
 	})
@@ -57,7 +57,7 @@ describe("countWords", () => {
 		expect(countWords("one\r\ntwo\r\nthree")).toBe(3)
 	})
 	it("handles non-breaking spaces", () => {
-		expect(countWords("one two")).toBe(2)
+		expect(countWords("one two")).toBe(2)
 	})
 })
 
@@ -158,7 +158,7 @@ describe("countSequenceOccurrences", () => {
 	})
 	it("normalizes when requested", () => {
 		const nfc = "café"
-		const nfd = "cafe\u0301"
+		const nfd = "café"
 		expect(countSequenceOccurrences(nfc, nfd)).toBe(0)
 		expect(countSequenceOccurrences(nfc, nfd, { normalize: true })).toBe(1)
 	})

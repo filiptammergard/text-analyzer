@@ -1,3 +1,4 @@
 {
-	"extends": "@tammergard/tsconfig"
+	"extends": "@tammergard/tsconfig",
+	"include": ["src"]
 }

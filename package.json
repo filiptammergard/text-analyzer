@@ -1,61 +1,23 @@
 {
 	"name": "text-analyzer",
 	"version": "2.0.0",
-	"description": "Utility functions providing possibilities to analyze text.",
-	"scripts": {
-		"build": "tsdown src/index.ts --format esm,cjs --dts",
-		"lint": "eslint .",
-		"format": "prettier --write .",
-		"format-check": "prettier --check .",
-		"release": "pnpm build && pnpm changeset publish",
-		"review": "pnpm install --frozen-lockfile && pnpm lint && pnpm format-check && pnpm test && pnpm build",
-		"test": "vitest"
-	},
-	"devDependencies": {
-		"@changesets/cli": "2.31.0",
-		"@tammergard/eslint-config-base": "5.1.0",
-		"@tammergard/prettier-config": "3.0.0",
-		"@tammergard/tsconfig": "2.10.0",
-		"eslint": "10.4.0",
-		"prettier": "3.8.3",
-		"tsdown": "0.22.0",
-		"typescript": "6.0.3",
-		"vitest": "4.1.6"
-	},
-	"files": [
-		"dist/index.cjs",
-		"dist/index.mjs",
-		"dist/index.d.cts",
-		"dist/index.d.mts"
-	],
-	"main": "dist/index.cjs",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.cts",
-	"exports": {
-		".": {
-			"import": {
-				"types": "./dist/index.d.mts",
-				"default": "./dist/index.mjs"
-			},
-			"require": {
-				"types": "./dist/index.d.cts",
-				"default": "./dist/index.cjs"
-			}
-		}
-	},
-	"sideEffects": false,
-	"engines": {
-		"node": ">=18"
-	},
+	"description": "Analyze text: count characters, words, sentences, paragraphs, and reading time",
 	"keywords": [
+		"text-analyzer",
 		"text",
+		"text-analysis",
 		"characters",
 		"words",
+		"word-count",
 		"reading-time"
 	],
 	"homepage": "https://github.com/filiptammergard/text-analyzer#readme",
 	"bugs": {
 		"url": "https://github.com/filiptammergard/text-analyzer/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/filiptammergard/text-analyzer.git"
 	},
 	"license": "MIT",
 	"author": {
@@ -63,13 +25,47 @@
 		"email": "filip+npm@tammergard.se",
 		"url": "https://tammergard.se"
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/filiptammergard/text-analyzer.git"
+	"sideEffects": false,
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.mts",
+			"default": "./dist/index.mjs"
+		}
+	},
+	"main": "dist/index.mjs",
+	"types": "dist/index.d.mts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "tsdown src/index.ts --format esm --dts",
+		"format": "prettier --write .",
+		"format-check": "prettier --check .",
+		"lint": "eslint .",
+		"prepublishOnly": "pnpm build",
+		"release": "pnpm changeset publish",
+		"review": "pnpm install --frozen-lockfile && pnpm format-check && pnpm lint && pnpm typecheck && pnpm test && pnpm build",
+		"test": "vitest --run",
+		"typecheck": "tsc"
+	},
+	"devDependencies": {
+		"@changesets/cli": "^2.31.0",
+		"@tammergard/eslint-config-base": "^6.1.0",
+		"@tammergard/prettier-config": "^3.0.0",
+		"@tammergard/tsconfig": "^3.0.0",
+		"eslint": "^10.4.0",
+		"prettier": "^3.8.3",
+		"tsdown": "^0.22.0",
+		"typescript": "^6.0.3",
+		"vitest": "^4.1.7"
+	},
+	"packageManager": "pnpm@10.33.2",
+	"engines": {
+		"node": ">=24"
 	},
 	"publishConfig": {
 		"access": "public",
 		"provenance": true
-	},
-	"packageManager": "pnpm@11.1.3+sha512.c85357fe17ca12dd23dd7071822666dfd7e3cb76fe214e3370b5ea2fb34f2a231185509b63e717f3cd0acb38dd3f8d82bcd5e8172400ae678b70ea4fbed0896d"
+	}
 }

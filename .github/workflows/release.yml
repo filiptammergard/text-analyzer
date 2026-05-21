@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write # to create releases
-      id-token: write # to publish with provenance
+      id-token: write # for npm trusted publishing (OIDC)
       pull-requests: write # to create pull requests
     steps:
       - name: Checkout
@@ -25,11 +25,11 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version-file: package.json
           cache: pnpm
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Create release PR or publish to npm
         uses: changesets/action@v1
@@ -37,4 +37,3 @@ jobs:
           publish: pnpm release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
