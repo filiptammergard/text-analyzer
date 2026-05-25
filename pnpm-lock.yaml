@@ -19,7 +19,7 @@ importers:
         version: 3.0.0(prettier@3.8.3)
       '@tammergard/tsconfig':
         specifier: ^3.0.0
-        version: 3.0.0(typescript@6.0.3)
+        version: 3.0.1(typescript@6.0.3)
       eslint:
         specifier: ^10.4.0
         version: 10.4.0
@@ -355,10 +355,11 @@ packages:
     peerDependencies:
       prettier: '>=3.0.0'
 
-  '@tammergard/tsconfig@3.0.0':
-    resolution: {integrity: sha512-WCx/n+Hz97+2YIIfch8khbLScHI8uWgYvhIK6HTFAod3BwjUsb+pg+xGzKQ/KL4BuC0Lp8hB8creovHy0SS1Ow==}
+  '@tammergard/tsconfig@3.0.1':
+    resolution: {integrity: sha512-RiLRg/PqVHg2h6Vwc0FQCoPUNzYpd4xxMPvOMyYsO7gmPmlS/jTYGxbDbUPiJVHMbnYLm/PzfO74QGxWJDOgVg==}
+    engines: {node: '>=24'}
     peerDependencies:
-      typescript: '6'
+      typescript: '>=6'
 
   '@tybys/wasm-util@0.10.2':
     resolution: {integrity: sha512-RoBvJ2X0wuKlWFIjrwffGw1IqZHKQqzIchKaadZZfnNpsAYp2mM0h36JtPCjNDAHGgYez/15uMBpfGwchhiMgg==}
@@ -1623,7 +1624,7 @@ snapshots:
     dependencies:
       prettier: 3.8.3
 
-  '@tammergard/tsconfig@3.0.0(typescript@6.0.3)':
+  '@tammergard/tsconfig@3.0.1(typescript@6.0.3)':
     dependencies:
       typescript: 6.0.3
 
