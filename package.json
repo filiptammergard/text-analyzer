@@ -1,6 +1,6 @@
 {
 	"name": "text-analyzer",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Analyze text: count characters, words, sentences, paragraphs, and reading time",
 	"keywords": [
 		"text-analyzer",
