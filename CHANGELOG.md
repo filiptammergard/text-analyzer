@@ -1,5 +1,11 @@
 # text-analyzer
 
+## 3.0.1
+
+### Patch Changes
+
+- 7b544e6: Use `devEngines` instead of `engines` for the Node version requirement, so it applies to development only and no longer constrains consumers of the package.
+
 ## 3.0.0
 
 ### Major Changes
