@@ -1,2 +1,10 @@
 minimumReleaseAgeExclude:
   - "@tammergard/*"
+
+overrides:
+  # eslint and @eslint/config-array (even the latest 10.14.0 / 0.23.5) declare
+  # minimatch ^10, and 10.x gets no fix for GHSA-g3hv-75wg-m249 (fixed in
+  # 11.0.1). They only use `new Minimatch(pattern, { dot: true }).match()`,
+  # which 11 keeps, CommonJS build included. Can be removed when eslint moves
+  # to minimatch ^11.
+  "minimatch@>=7.0.0 <11.0.1": "^11.0.1"
